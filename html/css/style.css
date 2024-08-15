@@ -1,0 +1,436 @@
+* {
+	box-sizing: border-box;
+	transition: all ease-in-out 150ms;
+}
+
+body {
+	margin: 0;
+	height: 100vh;
+	font-family: 'Raleway', sans-serif;
+	text-align: center;
+	background-color: #cecece;
+	width: 100vw;
+}
+
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+
+.hide{
+	display:none!important;
+}
+
+.spinner:before {
+  content: '';
+  position: fixed;
+  width: 2.8em;
+  height: 2.8em;
+  left: 1em;
+  top: 0.7em;
+  border-radius: 50%;
+  border: 2px solid #088601;
+  border-top-color: #000000;
+  animation: spinner .4s linear infinite;
+  z-index: 100;
+}
+
+div.cover {
+  opacity: 0.8;
+  background: #000;
+  width:      100%;
+  height:     100%;
+  z-index:    10;
+  top:        0;
+  left:       0;
+  position:   fixed;
+}
+
+figcaption {
+  background-color: black;
+  color: white;
+  /* max-width: 400px; */
+  /* font-size: 10px; */
+  display: block;
+  float: left;
+  position: absolute;
+  /* top: 0; */
+}
+
+figure {
+  position: relative;
+  float: left;
+  padding: 1%;
+  border: 1px solid black;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.container {
+	/* position: relative; */
+	width: 100%;
+	max-width: 70em;
+	margin: 0 auto;
+	padding-top: 9em;
+}
+
+.clearfix::after,
+section::after,
+footer::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+section ul{
+	padding:0;
+	margin:0;
+}
+
+/* typography
+=================== */
+
+h1 {
+	font-weight: 300;
+	font-size: 1.7rem;
+	margin-top: 0;
+}
+
+p {
+	margin-top: 0;
+	line-height: 1.5;
+}
+
+p:last-of-type {
+	margin-bottom: 0;
+}
+
+.title {
+	font-size: 2.5rem;
+	font-weight: 900;
+}
+
+.title span {
+	font-weight: 300;
+	display: block;
+	font-size: .9em;
+}
+
+
+@media (min-width:60rem) {
+
+	p {
+		font-size: 1.2rem;
+		line-height: 1.6;
+	}
+
+	.title {
+		font-size: 3.7rem;
+	}
+}
+
+/* buttons */
+
+.button {
+	display: inline-block;
+	font-size: 1.15rem;
+	text-decoration: none;
+	text-transform: uppercase;
+	border-width: 2px;
+	border-style: solid;
+	padding: .5em 1.75em;
+}
+
+.button-small {
+	display: inline-block;
+	font-size: 0.9rem;
+	border-radius: 0.3em;
+	text-decoration: none;
+	text-transform: uppercase;
+	border-width: 2px;
+	border-style: solid;
+	padding: .2em 1em;
+}
+
+.button-small:hover{
+	cursor:pointer;
+}
+
+@media (min-width: 60rem) {
+	.button {
+		font-size: 1.5rem;
+	}
+	.button-small{
+		font-size: 1.2rem;
+	}
+}
+
+
+.button-accent {
+	color: #00ff6c;
+	border-color: #00ff6c;
+	border-radius: 100%;
+	height: 7rem;
+	width: 7rem;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 2.7rem;
+	text-shadow: 0.3rem 0.3rem 0.3rem black;
+}
+
+.button-accent:hover,
+.button-accent:focus {
+	background: #00ff6c;
+	color: #232323;
+}
+
+/* header
+=================== */
+
+header {
+	display: block;
+	float: left;
+	margin: 0 auto;
+	width: 100vw;
+	margin-top: 15vh;
+}
+
+header h1{
+	color:white;
+}
+nav{
+	width: 100vw;
+}
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav li {
+	display: inline-block;
+	margin: 1em;
+}
+
+nav a {
+	font-weight: 900;
+	text-decoration: none;
+	padding: .5em;
+	text-transform: uppercase;
+	color: white;
+	font-size: .8rem;
+}
+
+nav a:hover,
+nav a:focus {
+	color: #ddd;
+}
+
+
+/* hero-home
+=================== */
+
+.home-hero {
+	background-image: url(../img/bg.jpg);
+	background-size: cover;
+	background-position: center;
+	padding: 10em 0;
+	color: #FFF;
+	height: 100%;
+	width: 100%;
+}
+
+@media (min-width: 60rem) {
+	.home-hero {
+		height: 100vh;
+		padding-top: 35vh;
+	}
+}
+
+
+/* portfolio
+=================== */
+
+.list-inline{
+	display: inline-block;
+}
+
+.icon{
+	/* height: 0.8em; */
+	/* width: 0.8em; */
+	/* line-height: 0.5em; */
+	/* border: 2px solid black; */
+	font-size: 3em;
+	/* margin-top: 0.2em; */
+	/* border-radius: 100%; */
+}
+
+.icon:hover{
+	cursor:pointer;
+	font-size:3.1em;
+}
+
+.icon-left{
+	float:left;
+	padding-left: 1em;
+}
+
+.icon-right{
+	float:right;
+	padding-right: 1em;
+}
+
+.portfolio {
+	/* margin: 0em 0 1.5em; */
+}
+
+.port-item {
+	margin: 0;
+	position: relative;
+}
+
+.port-item img {
+	/* display: block; */
+	/* position: relative; */
+	/* float: left; */
+	/* width: 26em; */
+	/* height: 16em; */
+	/* padding: 0.1em; */
+	/* background-position: 50% 50%; */
+	/* background-repeat:   no-repeat; */
+	/* background-size:     cover; */
+}
+
+.port-desc {
+	/* position: absolute; */
+	z-index: 100;
+	bottom: 0em;
+	left: 0em;
+	right: 0em;
+	color: white;
+	background: rgba(0,0,0,.6);
+	padding-bottom: 2em;
+}
+
+@media (min-width: 37rem) {
+	.port-item {
+		width: 50%;
+		float: left;
+	}
+}
+
+@media (min-width: 60rem) {
+	.port-item {
+		width: 33.3333334%;
+		overflow: hidden;
+	}
+
+	.port-desc {
+		transform: translateY(150%);
+	}
+
+	.port-item:hover .port-desc {
+		transform: translateY(0%);
+	}
+}
+
+/* Dialog
+//==============*/
+.dialog-container{
+	width: 100%;
+	height: 100%;
+	display: block;
+	top: 0;
+	left: 0;
+	position: fixed;
+	z-index:200;
+}
+
+#dialog {
+	position: relative;
+    height: auto;
+    opacity:1.0;
+    width: 80%;
+    margin: 0em auto 0em auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0em 0em 0.2em 0.05em black;
+}
+
+#dialogHead{
+	height: 1.5em;
+	font-size: 2em;
+	background-color: #ddd;
+	color: black;
+	padding: 0.2em;
+	font-weight: 200;
+}
+
+#dialogBody{
+	padding: 1em;
+}
+
+/* Uploader
+//==============*/
+.upload-container{
+	width: 100%;
+	height: 100%;
+	display: block;
+	top: 0;
+	left: 0;
+	position: fixed;
+	z-index:200;
+}
+
+.uploader{
+	width: 17em;
+	height: auto;
+	background-color: white;
+	margin: 0em auto 0em auto;
+	padding: 0.3em 1em 1em 1em;
+	border-radius: 11px;
+}
+
+.uploader-title{
+	margin:0;
+	padding:0;
+}
+
+.uploader-title h3{
+	padding-left:1em;
+}
+
+#closeUpload{
+    font-size: 1.6em;
+    float: right;
+}
+
+#closeUpload:hover{
+	cursor:pointer;
+	font-size:1.8em;
+	margin-right: -0.1em;
+}
+
+.uploader p{
+	text-align: center;
+	text-decoration: underline;
+}
+
+#uploadSubmit {
+    width: 100%;
+    padding: 0.4em;
+    font-weight: 700;
+    margin-top: 1em;
+}
+
+input[type=text], input[type=date],	input[type=time], select {
+    width: 100%;
+    padding: 0.7em 0.9em;
+    margin: 0.2em 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}

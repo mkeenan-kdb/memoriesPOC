@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our Memories</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script src="js/c.js"></script>
+<script src="js/memories.js"></script>
+</head>
+
+<body>
+<div id="overlay" class="cover"></div>
+<div id="dialogContainer" class="dialog-container">
+	<div id="dialog">
+	    <div id="dialogHead">Welcome!</div>
+	    <div id="dialogBody">
+	    	Connecting to memory bank...
+	    </div>
+	</div>
+</div>
+<div id="uploadContainer" class="upload-container hide">
+	<div class="uploader">
+		<ul class="uploader-title">
+			<li class="list-inline"><h3>Upload Image</h3></li>
+			<li id="closeUpload" onClick="toggleUpload()" class="list-inline">&#8855;</li>
+		</ul>
+		<p>Please fill all fields.</p>
+		<form>
+			<label for="imgTitle">Image Title:</label>
+			<input type="text" id="imgTitle" value="Image Title" placeholder="At the beach!">
+
+			<label for="imgDate">Date Taken:</label>
+			<input type="date" id="imgDate" value="2016-06-01" placeholder="YYYY/MM/DD">
+
+			<label for="imgTime">Time Taken:</label>
+			<input type="time" id="imgTime" value="16:45" placeholder="HH:MM">
+
+			<label for="imgLoc">Image Location:</label>
+			<input type="text" id="imgLoc" value="Carlingford" placeholder="e.g. Miami">
+
+			<label for="imgDesc">Image Description:</label>
+			<input type="text" id="imgDesc" value="Something interesting" placeholder="Short Description...">			
+
+			<label for="imgSubj">Who's in it?</label>
+			<select id="imgSubj">
+				<option value="ARIELLE">ARIELLE</option value="ARIELLE">
+				<option value="BOB">BOB</option value="BOB">
+				<option value="CIARA">CIARA</option value="CIARA">
+				<option value="COBH">COBH</option value="COBH">
+				<option value="GERARD">GERARD</option value="GERARD">
+				<option value="ILLYSE">ILLYSE</option value="ILLYSE">
+				<option value="JOHN_C">JOHN_C</option value="JOHN_C">
+				<option value="KEVIN">KEVIN</option value="KEVIN">
+				<option value="LINDSEY">LINDSEY</option value="LINDSEY">
+				<option value="LISA">LISA</option value="LISA">
+				<option value="LUCY">LUCY</option value="LUCY">
+				<option value="MICHAEL">MICHAEL</option value="MICHAEL">
+				<option value="STEPHANIE">STEPHANIE</option value="STEPHANIE">
+			</select>
+
+			<label for="imgFile">Image File:</label>
+			<input type="file" id="imgFile" accept="image/*" onchange="document.getElementById('uploadSubmit').className='button-small button-accent';">
+			<div id="uploadSubmit" onClick="uploadNewImage();" class="button-small button-accent hide">Submit</div>
+		</form>
+	</div>
+</div>
+<header>
+	<h1 class="title">OUR MEMORIES</h1>
+	<nav>
+		<ul>
+			<li><div onClick="toggleUpload()" class="button-small button-accent">Upload</div></li>
+			<li><div class="button-small button-accent">Query Images</div></li>
+		</ul>
+	</nav>
+</header>
+
+<section class="home-hero">
+	<div class="container">
+		<h1 class="title">Storing your memories
+			 <span>Private storage that you control</span>
+		</h1>
+	</div>
+</section>
+
+<section class="portfolio">
+	<ul>
+		<li class="list-inline icon-left">
+			<div onClick="previousSet();" class="icon">&#171</div>
+		</li>
+		<li class="list-inline">
+			<h3>Recent Uploads</h3>
+		</li>
+		<li class="list-inline icon-right">
+			<div onClick="nextSet();" class="icon">&#187</div>
+		</li>
+	</ul>
+	<figure id="img0" class="port-item">
+		<figcaption class="port-desc">
+			<h3></h3>
+			<p></p>
+		</figcaption>
+	</figure>
+	<figure id="img1" class="port-item">
+		<figcaption class="port-desc">
+			<h3></h3>
+			<p></p>
+		</figcaption>
+	</figure>
+	<figure id="img2" class="port-item">
+		<figcaption class="port-desc">
+			<h3></h3>
+			<p></p>
+		</figcaption>
+	</figure>
+	<figure id="img3" class="port-item">
+		<figcaption class="port-desc">
+			<h3></h3>
+			<p></p>
+		</figcaption>
+	</figure>
+	<figure id="img4" class="port-item">
+		<figcaption onclick="void(0)" class="port-desc">
+			<h3></h3>
+			<p></p>
+		</figcaption>
+	</figure>
+	<figure id="img5" class="port-item">
+		<figcaption class="port-desc">
+			<h3></h3>
+			<p></p>
+		</figcaption>
+	</figure>
+</section>
+	<!-- TEMPLATE -->
+	<!--figure id="img0" class="port-item">
+		<figcaption class="port-desc">
+			<p>Project title</p></figcaption>
+	</figure-->
+<div id="loader" class="spinner"></div>
+</body>
+</html>
